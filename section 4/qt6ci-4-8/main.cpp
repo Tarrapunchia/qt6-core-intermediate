@@ -8,6 +8,13 @@
 
   How
   See below
+  si include con :
+     #include <QSharedPointer>
+  dichiarazione :
+    template <typename T>
+    class QSharedPointer {...}
+  funziona come gli scoped a livello API
+  funzionano come shared ptr di c++ (con ref counter)
 */
 
 #include <QCoreApplication>
