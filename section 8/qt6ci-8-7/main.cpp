@@ -7,8 +7,9 @@
   QIODevice is the base class of all IO devices
 
   How
-  QBuffer which is a simple IO Device
+  QBuffer which is a simple IO Device interface for a QByteArray
 
+    1. passo iniziale è l'apertura con .open() del device
  */
 
 #include <QCoreApplication>
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
 
     QBuffer buffer;
     if(buffer.open(QIODevice::ReadWrite))
+        // [override virtual] bool QBuffer::open(QIODeviceBase::OpenMode mode)
     {
         qInfo() << "Device is open";
 
@@ -31,6 +33,7 @@ int main(int argc, char *argv[])
             buffer.write(data);
             buffer.write("\r\n");
         }
+        // non c'è in un QBuffer perchè è tutto in memoria
         //buffer.flush();
 
         buffer.seek(0);

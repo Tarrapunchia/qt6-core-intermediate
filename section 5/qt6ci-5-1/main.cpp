@@ -8,10 +8,21 @@
 
     How
     Simple example
+    Semplice linked list (anche QVector lo sarà)
+    include :
+        #include <QList>
+    definizione :
+        template <typename T>
+        class QList
+    ha un overload sull'insertion operator per cui per appendere
+    posso fare lista << el1 << el2 etc;
+    chiaramente posso usare anche lista.append(el);
+    posso anche appendere un'altra lista di element analoghi
 */
 
 #include <QCoreApplication>
 #include <QList>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
